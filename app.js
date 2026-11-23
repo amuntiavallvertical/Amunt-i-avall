@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', scrollSpy);
 
     // 4. Animació d'entrada en fer scroll (Intersection Observer)
-    const fadeElements = document.querySelectorAll('.feature-badge, .panel, .contact-card, .quote-form-container, .security-banner');
+    const fadeElements = document.querySelectorAll('.feature-badge, .panel, .contact-card, .security-banner');
     
     // Configurar els estils inicials per Javascript perquè funcioni correctament com a millora progressiva
     fadeElements.forEach(el => {
@@ -90,81 +90,4 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(el => {
         revealOnScroll.observe(el);
     });
-
-    // 5. Personalització del Pujador de Fitxers (File Upload)
-    const fileInput = document.querySelector('.file-upload-input');
-    const fileNameDisplay = document.querySelector('.file-upload-name');
-    const uploadTriggerText = document.querySelector('.file-upload-trigger span');
-
-    if (fileInput) {
-        fileInput.addEventListener('change', (e) => {
-            const files = e.target.files;
-            if (files.length > 0) {
-                const name = files[0].name;
-                fileNameDisplay.textContent = `Fitxer seleccionat: ${name}`;
-                fileNameDisplay.style.display = 'block';
-                uploadTriggerText.textContent = "Canviar imatge";
-            } else {
-                fileNameDisplay.style.display = 'none';
-                uploadTriggerText.textContent = "Adjuntar foto de la façana / teulada";
-            }
-        });
-    }
-
-    // 6. Enviament interactiu del Formulari de Pressupost
-    const quoteForm = document.getElementById('quote-form');
-    const formSuccess = document.querySelector('.form-success');
-
-    if (quoteForm && formSuccess) {
-        quoteForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Simulació d'enviament (spin/delay per a més realisme premium)
-            const submitBtn = quoteForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `
-                <svg width="20" height="20" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#fff" style="animation: rotate 1s linear infinite;">
-                    <g fill="none" fill-rule="evenodd">
-                        <g transform="translate(1 1)" stroke-width="2">
-                            <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
-                            <path d="M36 18c0-9.94-8.06-18-18-18"></path>
-                        </g>
-                    </g>
-                </svg>
-                Enviant dades...
-            `;
-
-            // Obtenir dades del formulari
-            const formData = {
-                nom: document.getElementById('name').value,
-                telefon: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                servei: document.getElementById('service-type').value,
-                descripcio: document.getElementById('description').value,
-                data: new Date().toLocaleString()
-            };
-
-            setTimeout(() => {
-                // Desa les dades localment com a simulació de base de dades
-                let solicitudes = JSON.parse(localStorage.getItem('pressupostos') || '[]');
-                solicitudes.push(formData);
-                localStorage.setItem('pressupostos', JSON.stringify(solicitudes));
-
-                // Amagar formulari amb transició
-                quoteForm.style.transition = 'opacity 0.4s ease';
-                quoteForm.style.opacity = '0';
-                
-                setTimeout(() => {
-                    quoteForm.style.display = 'none';
-                    formSuccess.style.display = 'block';
-                    
-                    // Activar focus al missatge de gràcies per accessibilitat
-                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 400);
-
-            }, 1800); // 1.8 segons de delay per a l'animació de càrrega
-        });
-    }
 });

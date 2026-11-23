@@ -43,3 +43,11 @@ Aquest fitxer defineix el context del projecte, les decisions de disseny i l'his
 - **Instrucció de l'usuari:** *"El botó de watsapp un pel més amunt per no tapar Uri Vallès quan baixa la pàgina al final de tot"*
 - **Canvis aplicats:**
   - S'ha modificat [index.css](file:///c:/Users/titon/Desktop/Programaci%C3%B3/@Amunt-i-avall/index.css) per elevar el botó `.whatsapp-float` a `50px` (desktop) i `40px` (mòbil), evitant que tapi el text del footer.
+
+### 4. Eliminació del Formulari de Pressupost i Contacte Directe
+- **Instrucció de l'usuari:** *"I m'agradaria treure la part del formulari... Prefereixo treure-la. Deixem només whatssappp, mail, etc."*
+- **Canvis aplicats:**
+  - S'ha retirat el formulari de pressupost `<form id="quote-form">` i el seu contenidor d'[index.html](file:///c:/Users/titon/Desktop/Programaci%C3%B3/@Amunt-i-avall/index.html).
+  - S'ha adaptat la secció `#contacte` a un disseny centrat i elegant amb 3 targetes directes de contacte: Trucada telefònica, WhatsApp i Correu electrònic.
+  - S'ha netejat el fitxer [app.js](file:///c:/Users/titon/Desktop/Programaci%C3%B3/@Amunt-i-avall/app.js) traient les seccions d'enviament de formulari i pujada de fitxers.
+  - S'han actualitzat els estils a [index.css](file:///c:/Users/titon/Desktop/Programaci%C3%B3/@Amunt-i-avall/index.css) amb una graella adaptable (`.contact-cards-grid`) amb efecte hover i adaptació mòbil.

@@ -705,57 +705,67 @@ ul {
     animation: counterRotate 20s linear infinite;
 }
 
-/* CONTACTE / PRESSUPOST */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 4rem;
+/* CONTACTE DIRECTE */
+.contact-section-content {
+    max-width: 980px;
+    margin: 0 auto;
 }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.contact-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
 }
 
 .contact-info-title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 800;
     margin-bottom: 1rem;
+    color: var(--text-main);
 }
 
 .contact-info-desc {
     color: var(--text-muted);
-    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-.contact-details {
-    display: flex;
-    flex-direction: column;
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
 .contact-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 1.25rem;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 1.25rem;
-    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
     transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px rgba(13, 34, 53, 0.04);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(13, 34, 53, 0.08);
 }
 
 /* Targeta Telèfon */
 .phone-card .contact-card-icon {
-    background: rgba(234, 88, 12, 0.06);
-    border: 1px solid rgba(234, 88, 12, 0.12);
+    background: rgba(234, 88, 12, 0.08);
+    border: 1px solid rgba(234, 88, 12, 0.15);
     color: var(--primary);
 }
 
 .phone-card:hover {
     border-color: var(--primary) !important;
-    background: rgba(234, 88, 12, 0.03) !important;
+    background: rgba(234, 88, 12, 0.02) !important;
 }
 
 .phone-card:hover .contact-card-icon {
@@ -767,13 +777,13 @@ ul {
 /* Targeta Correu */
 .email-card .contact-card-icon {
     background: var(--accent-glow);
-    border: 1px solid rgba(58, 107, 140, 0.12);
+    border: 1px solid rgba(58, 107, 140, 0.15);
     color: var(--accent);
 }
 
 .email-card:hover {
     border-color: var(--accent) !important;
-    background: rgba(58, 107, 140, 0.03) !important;
+    background: rgba(58, 107, 140, 0.02) !important;
 }
 
 .email-card:hover .contact-card-icon {
@@ -784,14 +794,14 @@ ul {
 
 /* Targeta WhatsApp */
 .whatsapp-card .contact-card-icon {
-    background: rgba(37, 211, 102, 0.06);
-    border: 1px solid rgba(37, 211, 102, 0.12);
+    background: rgba(37, 211, 102, 0.08);
+    border: 1px solid rgba(37, 211, 102, 0.15);
     color: #25D366;
 }
 
 .whatsapp-card:hover {
     border-color: #25D366 !important;
-    background: rgba(37, 211, 102, 0.03) !important;
+    background: rgba(37, 211, 102, 0.02) !important;
 }
 
 .whatsapp-card:hover .contact-card-icon {
@@ -801,9 +811,9 @@ ul {
 }
 
 .contact-card-icon {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 8px;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -815,151 +825,15 @@ ul {
     text-transform: uppercase;
     color: var(--text-muted);
     letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
 }
 
 .contact-card-content p {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.1rem;
+    color: var(--text-main);
     word-break: break-all;
     overflow-wrap: anywhere;
-}
-
-/* FORMULARI */
-.quote-form-container {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 3rem;
-    border-radius: 24px;
-    position: relative;
-    box-shadow: 0 20px 45px rgba(13, 34, 53, 0.05);
-}
-
-.quote-form-container::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(13, 34, 53, 0.05), rgba(255, 255, 255, 0.02) 50%, rgba(234, 88, 12, 0.05));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    pointer-events: none;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-    position: relative;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-
-.form-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
-}
-
-.form-control {
-    width: 100%;
-    max-width: 100%;
-    background: #f8fafc;
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    padding: 0.85rem 1.25rem;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: var(--transition-smooth);
-    box-sizing: border-box;
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 12px var(--primary-glow);
-    background: #ffffff;
-}
-
-select.form-control {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1.25rem center;
-    background-size: 1.25rem;
-    padding-right: 2.5rem;
-}
-
-textarea.form-control {
-    min-height: 120px;
-    resize: vertical;
-}
-
-/* File input customizer */
-.file-upload-wrapper {
-    position: relative;
-    cursor: pointer;
-    max-width: 100%;
-}
-
-.file-upload-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.file-upload-trigger {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    border: 1px dashed var(--border-color);
-    background: rgba(255, 255, 255, 0.02);
-    padding: 1.25rem;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 500;
-    color: var(--text-muted);
-    transition: var(--transition-smooth);
-}
-
-.file-upload-wrapper:hover .file-upload-trigger {
-    border-color: var(--primary);
-    color: var(--text-main);
-    background: rgba(234, 88, 12, 0.02);
-}
-
-.file-upload-name {
-    font-size: 0.8rem;
-    color: var(--primary);
-    margin-top: 0.5rem;
-    text-align: center;
-    display: none;
-}
-
-.form-success {
-    display: none;
-    text-align: center;
-    padding: 2rem 0;
-    animation: fadeInUp 0.5s forwards;
-}
-
-.success-icon {
-    font-size: 3.5rem;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    animation: scaleUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 /* FOOTER */
@@ -1117,9 +991,17 @@ textarea.form-control {
         justify-content: flex-start;
     }
     
-    .contact-grid {
+    .contact-cards-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        max-width: 520px;
+        margin: 0 auto;
+        gap: 1.25rem;
+    }
+
+    .contact-card {
+        flex-direction: row;
+        text-align: left;
+        padding: 1.5rem;
     }
 }
 
@@ -1264,15 +1146,16 @@ textarea.form-control {
 
 @media (max-width: 480px) {
     .contact-card {
-        padding: 1rem;
-        gap: 0.75rem;
+        padding: 1.15rem 1rem;
+        gap: 0.85rem;
     }
     .contact-card-icon {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        min-width: 2.75rem;
     }
     .contact-card-content p {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 }
 

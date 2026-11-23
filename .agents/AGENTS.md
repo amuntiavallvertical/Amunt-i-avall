@@ -8,6 +8,7 @@ Aquest fitxer defineix el context del projecte, les decisions de disseny i l'his
 - **Nom:** Amunt i Avall
 - **Descripció:** Pàgina web per a una empresa de treballs verticals i d'altura.
 - **Creador/Desenvolupador:** Uri Vallès (GitHub: `https://github.com/urivalles`)
+- **Repositori Oficial:** `https://github.com/amuntiavallvertical/Amunt-i-avall`
 
 ---
 
